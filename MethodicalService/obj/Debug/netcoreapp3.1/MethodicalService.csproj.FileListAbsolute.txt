@@ -1,0 +1,10 @@
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\MethodicalService.csproj.AssemblyReference.cache
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\Styles\DataGrid.baml
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\AddReceipt.g.cs
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\Authentication.g.cs
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\Forms\ExtracurricularWorkForm.g.cs
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\Styles\DropDownList\MenuItem.g.cs
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\App.g.cs
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\MethodicalService_MarkupCompile.cache
+D:\study\source\repos\kp\MethodicalService\MethodicalService\obj\Debug\netcoreapp3.1\MethodicalService_MarkupCompile.lref

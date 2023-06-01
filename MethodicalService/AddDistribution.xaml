@@ -1,0 +1,37 @@
+﻿<Window x:Class="MethodicalService.AddDistribution"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MethodicalService"
+        mc:Ignorable="d"
+        Title="Регистрация УПД" Height="460" Width="400" Cursor="">
+    <Grid Margin="5,50,-5,-50" >
+        <TextBox x:Name="ID_Distribution" Visibility="Hidden" Margin="0,-40,0,40"/>
+
+        <TextBox x:Name="textNumberUPD" HorizontalAlignment="Left" Margin="190,-6,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+        <Label Content="Номер УПД" HorizontalAlignment="Left" Margin="25,-6,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="textStatus" HorizontalAlignment="Left" Margin="190,34,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+        <Label Content="Статус экземпляра" HorizontalAlignment="Left" Margin="25,34,0,0" VerticalAlignment="Top"/>
+
+
+        <TextBox x:Name="textName" HorizontalAlignment="Left" Margin="190,79,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+        <Label Content="Наименование УПД" HorizontalAlignment="Left" Margin="25,79,0,0" VerticalAlignment="Top"/>
+
+        <DatePicker x:Name="datePick" HorizontalAlignment="Left" Margin="190,124,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Дата получения" HorizontalAlignment="Left" Margin="25,129,0,0" VerticalAlignment="Top"/>
+
+
+        <ComboBox x:Name="comboDevelop" HorizontalAlignment="Left" Margin="190,180,0,0" Width="160" VerticalAlignment="Top"/>
+        <Label Content="Владелец" HorizontalAlignment="Left" Margin="25,179,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="textNote" HorizontalAlignment="Left" Margin="190,224,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+        <Label Content="Примечание" HorizontalAlignment="Left" Margin="25,224,0,0" VerticalAlignment="Top"/>
+
+
+        <Button x:Name="buttonDistribut" Content="Распределить" HorizontalAlignment="Left" Margin="63,292,0,0" VerticalAlignment="Top" Background="#FF329A93" BorderThickness="10,10,10,10" Padding="13,4,16,4" UseLayoutRounding="False" BorderBrush="#FF329A93" Width="150" Click="ButtonDistribut_Click"/>
+        <Button x:Name="buttonCancel" Content="Отменить" HorizontalAlignment="Left" Margin="230,292,0,0" VerticalAlignment="Top" Background="#FF7F8C8B" BorderBrush="#FF7F8C8B" BorderThickness="10,10,10,10"/>
+        <Button x:Name="buttonEdit" Content="Изменить" HorizontalAlignment="Left" Margin="63,292,0,0" VerticalAlignment="Top" Background="#FF329A93" BorderThickness="10,10,10,10" Padding="13,4,16,4" UseLayoutRounding="False" BorderBrush="#FF329A93" Width="152" Click="ButtonEdit_Click"/>
+    </Grid>
+</Window>

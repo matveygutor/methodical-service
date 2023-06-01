@@ -1,0 +1,98 @@
+﻿<Window x:Class="MethodicalService.Authentication"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MethodicalService"
+        mc:Ignorable="d"
+        Title="Приложение заместителя директора по учебно-методической работе (Авторизация)" Height="500" Width="939" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#54329A93"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="DRadius8" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="8">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF329A93"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Image Source="pack://application:,,,/Data/Images/Лого.Секретарь.png" Grid.Row="0" Grid.Column="0" Width="328" Height="80" Margin="15,7,56,7"/>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="10,0,5,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Label  Grid.Row="0" Grid.Column="0" Content="Вход" FontSize="36" Foreground="#FF329A93" FontWeight="Bold"/>
+            <Grid Grid.Row="1">
+                <Label  Grid.Row="0" Grid.Column="0" Content="Логин:" FontSize="12" Foreground="#FF329A93"/>
+                <TextBox VerticalAlignment="Top" x:Name="tbLogin" FontSize="19" Height="30" Width="374" Margin="5,30,0,0" TextChanged="tbLogin_TextChanged" BorderBrush="{x:Null}" BorderThickness="1" Background="{x:Null}" Foreground="#FF329A93" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Label Grid.Row="0" Grid.Column="0" Content="Пароль:" FontSize="12" Foreground="#FF329A93"/>
+                <PasswordBox VerticalAlignment="Top" x:Name="tbPassword" FontSize="19" Height="30" Width="374"  BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF329A93" PasswordChanged="tbPassword_TextChanged" Style="{DynamicResource WaterMarkPasswordBoxStyle}" PasswordChar="●" Margin="5,30,0,0" HorizontalAlignment="Left"/>
+            </Grid>
+            <Button x:Name="btLogin" IsDefault="True" FontSize="24" Content="Войти" Grid.Row="3" IsEnabled="False" Click="btLogin_Click" Width="381" Height="50" BorderBrush="{x:Null}" Background="#7FE0E0E0" Foreground="#FF329A93" FontWeight="Bold" Style="{DynamicResource DRadius8}" Margin="0,25,0,5" HorizontalAlignment="Center"/>
+        </Grid>
+        <Image Source="pack://application:,,,/Data/Images/DP.png" Grid.Column="1" Grid.RowSpan="3" Width="473" Height="396"/>
+    </Grid>
+
+</Window>
