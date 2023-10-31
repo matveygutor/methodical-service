@@ -64,20 +64,6 @@ namespace MethodicalService
             comboSpeciality.SelectedValue = Data["Specialty_cipher"].ToString();
             comboType.SelectedValue = Data["Type_UPD"].ToString();
         }
-        //private void UpdateValue()
-        //{
-        //    string duration_training = $"{comboYear.SelectedValue}г. {comboMonth.SelectedValue}м.";
-        //    Data["ID_Receipts"] = ID_Receipts.Text;
-        //    Data["Number_instances"] = textCount.Text;
-        //    Data["Name_the_UPD"] = textName.Text;
-        //    Data["Note"] = textNote.Text;
-        //    Data["Meeting_number_YO"] = textNumber.Text;
-        //    Data["cn_E"] = comboDevelop.SelectedValue;
-        //    Data["Specialty_cipher"] = comboSpeciality.SelectedValue;
-        //    Data["Type_UPD"] = comboType.SelectedValue;
-        //    Data["Number_the_UPD"] = textNumberUPD.Text;
-        //    Data["Duration_training"] = duration_training;
-        //}
 
         private void ComboItemsSource()
         {
@@ -105,13 +91,11 @@ namespace MethodicalService
             string sqlExpression = "sp_InsertReceipt";
             using IDbConnection db = new SqlConnection(Properties.Resources.connectionString);
             int count = CheckNumberOfUPD(connection);
-
             if (count == 0)
             {
                 try
                 {
                     string duration_training = $"{comboYear.SelectedValue}г. {comboMonth.SelectedValue}мес.";
-
                     using SqlConnection sqlConnection1 = new(Properties.Resources.connectionString);
                     sqlConnection1.Open();
                     SqlCommand command = new(sqlExpression, sqlConnection1)
@@ -197,35 +181,6 @@ namespace MethodicalService
                         Value = int.Parse(textNumber.Text)
                     };
                     command.Parameters.Add(meetingNumber_Parameter);
-                    //SqlCommand cmd = new()
-                    //{
-                    //    CommandType = CommandType.Text,
-                    //    CommandText = "INSERT Journal_receipt_UPD_35 " +
-                    //                                                "(Name_the_UPD, " +
-                    //                                                 "Type_UPD, " +
-                    //                                                 "Number_the_UPD, " +
-                    //                                                 "Number_instances, " +
-                    //                                                 "Date_approval, " +
-                    //                                                 "Specialty_cipher, " +
-                    //                                                 "Duration_training, " +
-                    //                                                 "Note, " +
-                    //                                                 "cn_E, " +
-                    //                                                 "Meeting_number_YO) " +
-                    //                                                 "VALUES " +
-                    //                                                 $"(N'{textName.Text}', " +
-                    //                                                 $"(select ID_UPD FROM Type_UPD where Full_name like '{comboType.SelectedValue}'), " +
-                    //                                                 $"{textNumberUPD.Text}, " +
-                    //                                                 $"{textCount.Text}, " +
-                    //                                                 $"'{datePick.SelectedDate.Value.ToShortDateString()}', " +
-                    //                                                 $"N'{comboSpeciality.SelectedValue}', " +
-                    //                                                 $"N'{duration_training}', " +
-                    //                                                 $"N'{textNote.Text}', " +
-                    //                                                 $"{comboDevelop.SelectedIndex}, " +
-                    //                                                 $"{textNumber.Text})",
-                    //    Connection = sqlConnection1
-                    //};
-                    //cmd.ExecuteNonQuery();
-
                     if (command.ExecuteNonQuery() != -1)
                     {
                         MessageBox.Show($"УПД с номером {textNumberUPD.Text} успешно зарегистрирована", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -352,26 +307,6 @@ namespace MethodicalService
                                 Value = int.Parse(textNumber.Text)
                             };
                             command.Parameters.Add(meetingNumber_Parameter);
-                            //SqlCommand cmd = new()
-                            //{
-                            //    CommandType = CommandType.Text,
-                            //    CommandText = "UPDATE Journal_receipt_UPD_35 SET " +
-                            //                                                 "Name_the_UPD = " + $"N'{textName.Text}', " +
-                            //                                                 "Type_UPD = " + $"(select ID_UPD from Type_UPD where Full_name like '{comboType.SelectedValue}'), " +
-                            //                                                 "Number_the_UPD = " + $"{int.Parse(textNumberUPD.Text)}, " +
-                            //                                                 "Number_instances = " + $"{textCount.Text}, " +
-                            //                                                 "Date_approval = " + $"'{datePick.SelectedDate.Value}', " +
-                            //                                                 "Specialty_cipher = " + $"N'{comboSpeciality.SelectedValue}', " +
-                            //                                                 "Duration_training = " + $"N'{duration_training}', " +
-                            //                                                 "Note = " + $"N'{textNote.Text}', " +
-                            //                                                 "cn_E = " + $"{comboDevelop.SelectedIndex}, " +
-                            //                                                 "Meeting_number_YO = " + $"{textNumber.Text}" +
-                            //                                                 $"WHERE ID_Receipts = {ID_Receipts.Text}",
-                            //    Connection = sqlConnection1
-                            //};
-                            //sqlConnection1.Open();
-                            //cmd.ExecuteNonQuery();
-                            //sqlConnection1.Close();
                             if (command.ExecuteNonQuery() != -1)
                             {
                                 MessageBox.Show($"УПД с номером {textNumberUPD.Text} успешно изменена", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -412,13 +347,11 @@ namespace MethodicalService
                         MessageBox.Show($"УПД с номером {textNumberUPD.Text} уже зарегистрирована в системе", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private int CheckNumberOfUPD(SqlConnection connection)

@@ -648,11 +648,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\study\\source\\repos\\kp\\MethodicalService\\MethodicalService\\MethodicalService.csproj",
+      "projectUniqueName": "D:\\college\\source\\repos\\kp\\MethodicalService\\MethodicalService\\MethodicalService.csproj",
       "projectName": "MethodicalService",
-      "projectPath": "D:\\study\\source\\repos\\kp\\MethodicalService\\MethodicalService\\MethodicalService.csproj",
+      "projectPath": "D:\\college\\source\\repos\\kp\\MethodicalService\\MethodicalService\\MethodicalService.csproj",
       "packagesPath": "C:\\Users\\Матвей\\.nuget\\packages\\",
-      "outputPath": "D:\\study\\source\\repos\\kp\\MethodicalService\\MethodicalService\\obj\\",
+      "outputPath": "D:\\college\\source\\repos\\kp\\MethodicalService\\MethodicalService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Матвей\\AppData\\Roaming\\NuGet\\NuGet.Config",

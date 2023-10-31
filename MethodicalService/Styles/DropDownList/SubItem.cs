@@ -12,6 +12,11 @@ namespace MethodicalService
             Screen = screen;
             SubIcon = icon;
         }
+        public SubItem(string name, UserControl screen = null)
+        {
+            Name = name;
+            Screen = screen;
+        }
         public string Name { get; private set; }
         public UserControl Screen { get; private set; }
         public PackIconKind SubIcon { get; private set; }

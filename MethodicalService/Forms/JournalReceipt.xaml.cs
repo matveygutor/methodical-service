@@ -31,7 +31,6 @@ namespace MethodicalService.Forms
 
         public void SelectDataFromServer(string sqlExpression)
         {
-            //string sqlExpression = "sp_GetReceipt";
             SqlConnection connection = new(Properties.Resources.connectionString);
             try
             {

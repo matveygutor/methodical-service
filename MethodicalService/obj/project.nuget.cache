@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IdujaGmtVfDSE/HfNDtqWAX4BQ4z2CjfVVDpkLCnkUCgnEmXS+KnbvvS6F9zcT4WkBaD2Jq6MvAPi5XonAdgVA==",
+  "dgSpecHash": "V08a75TyYVI0O955Lc3IPziUlIl1e6Q+eniQsqqXkCChAl/OT0GoRV+/r3U3TvMMIE+NF1m/djdU+YYzpgvjlA==",
   "success": true,
-  "projectFilePath": "D:\\study\\source\\repos\\kp\\MethodicalService\\MethodicalService\\MethodicalService.csproj",
+  "projectFilePath": "D:\\college\\source\\repos\\kp\\MethodicalService\\MethodicalService\\MethodicalService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Матвей\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Матвей\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",

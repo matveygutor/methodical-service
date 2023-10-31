@@ -60,9 +60,9 @@ namespace MethodicalService
 
             List<SubItem> updDevelopment = new()
             {
-                new SubItem("Поступление УПД" , PackIconKind.JournalMultiple, new Forms.ExtracurricularWorkForm()),
-                new SubItem("Распределение УПД" , PackIconKind.JournalOutline, new Forms.Distribution_log()),
-                new SubItem("Планы разр. УПД", PackIconKind.Work)
+                new SubItem("Поступление УПД", new Forms.ExtracurricularWorkForm()),
+                new SubItem("Распределение УПД", new Forms.Distribution_log()),
+                new SubItem("Планы разр. УПД")
             };
             ItemMenu thirdItem = new("УПД", updDevelopment, PackIconKind.DocumentSign);
 
