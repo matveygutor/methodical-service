@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MethodicalService"
         mc:Ignorable="d"
-        Title="Приложение заместителя директора по учебно-методической работе (Авторизация)" Height="500" Width="939" WindowStartupLocation="CenterScreen">
+        Title="Приложение заместителя директора по учебно-методической работе" Height="500" Width="939" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -73,6 +73,7 @@
             <RowDefinition Height="3.5*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
+        
         <Image Source="pack://application:,,,/Data/Images/Лого.Секретарь.png" Grid.Row="0" Grid.Column="0" Width="328" Height="80" Margin="15,7,56,7"/>
         <Grid Grid.Row="1" Grid.Column="0" Margin="10,0,5,0">
             <Grid.RowDefinitions>
@@ -81,17 +82,56 @@
                 <RowDefinition Height="1.5*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Label  Grid.Row="0" Grid.Column="0" Content="Вход" FontSize="36" Foreground="#FF329A93" FontWeight="Bold"/>
+            <Label Grid.Row="0" Grid.Column="0" Content="Вход" FontSize="36" Foreground="#FF329A93" FontWeight="Bold"/>
             <Grid Grid.Row="1">
-                <Label  Grid.Row="0" Grid.Column="0" Content="Логин:" FontSize="12" Foreground="#FF329A93"/>
-                <TextBox VerticalAlignment="Top" x:Name="tbLogin" FontSize="19" Height="30" Width="374" Margin="5,30,0,0" TextChanged="tbLogin_TextChanged" BorderBrush="{x:Null}" BorderThickness="1" Background="{x:Null}" Foreground="#FF329A93" HorizontalAlignment="Left"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Логин" FontSize="16" Foreground="#FF329A93"/>
+                <TextBox VerticalAlignment="Top" 
+                         x:Name="tbLogin" 
+                         FontSize="20" 
+                         Height="35" 
+                         Width="374" 
+                         Margin="5,30,0,5"
+                         TextChanged="tbLogin_TextChanged" 
+                         BorderBrush="{x:Null}" 
+                         BorderThickness="1" 
+                         Background="{x:Null}" 
+                         Foreground="#FF329A93" 
+                         HorizontalAlignment="Left" CaretBrush="{x:Null}"/>
             </Grid>
             <Grid Grid.Row="2">
-                <Label Grid.Row="0" Grid.Column="0" Content="Пароль:" FontSize="12" Foreground="#FF329A93"/>
-                <PasswordBox VerticalAlignment="Top" x:Name="tbPassword" FontSize="19" Height="30" Width="374"  BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FF329A93" PasswordChanged="tbPassword_TextChanged" Style="{DynamicResource WaterMarkPasswordBoxStyle}" PasswordChar="●" Margin="5,30,0,0" HorizontalAlignment="Left"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Пароль" FontSize="16" Foreground="#FF329A93"/>
+                <PasswordBox VerticalAlignment="Top" 
+                             x:Name="tbPassword" 
+                             FontSize="20" 
+                             Height="35" 
+                             Width="374"  
+                             BorderBrush="{x:Null}" 
+                             Background="{x:Null}" 
+                             Foreground="#FF329A93" 
+                             PasswordChanged="tbPassword_TextChanged" 
+                             PasswordChar="●" 
+                             Margin="5,30,0,5" 
+                             HorizontalAlignment="Left"/>
             </Grid>
-            <Button x:Name="btLogin" IsDefault="True" FontSize="24" Content="Войти" Grid.Row="3" IsEnabled="False" Click="btLogin_Click" Width="381" Height="50" BorderBrush="{x:Null}" Background="#7FE0E0E0" Foreground="#FF329A93" FontWeight="Bold" Style="{DynamicResource DRadius8}" Margin="0,25,0,5" HorizontalAlignment="Center"/>
+            <Button x:Name="btLogin" 
+                    IsDefault="True"
+                    FontSize="24" 
+                    Content="Войти" 
+                    Grid.Row="3" 
+                    IsEnabled="False" 
+                    Click="btLogin_Click" 
+                    Width="381" 
+                    Height="50" 
+                    BorderBrush="{x:Null}" 
+                    Background="#7FE0E0E0" 
+                    Foreground="#FF329A93" 
+                    FontWeight="Bold" 
+                    Style="{DynamicResource DRadius8}" 
+                    Margin="0,25,0,5" 
+                    HorizontalAlignment="Center">
+            </Button>
         </Grid>
+        
         <Image Source="pack://application:,,,/Data/Images/DP.png" Grid.Column="1" Grid.RowSpan="3" Width="473" Height="396"/>
     </Grid>
 

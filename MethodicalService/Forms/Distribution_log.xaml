@@ -18,30 +18,22 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid  Margin="1,29,0,0" Grid.Column="1" Grid.Row="1" GridLinesVisibility="None" AutoGenerateColumns="False" IsReadOnly="True" Name="distributionGrid" Background="White" Loaded="DistributionGrid_Loaded">
+        <DataGrid Margin="1,29,0,0" Grid.Column="1" Grid.Row="1" GridLinesVisibility="None" AutoGenerateColumns="False" IsReadOnly="True" Name="distributionGrid" Background="White" Loaded="DistributionGrid_Loaded" RowDetailsVisibilityMode="Visible">
             <DataGrid.ContextMenu>
                 <ContextMenu x:Name="MenuAddEditDelete">
                     <MenuItem Header="Изменить" Name="MenuItemEdit" Click="MenuItemEdit_Click"></MenuItem>
                     <MenuItem Header="Удалить" Name="MenuItemDelete" Click="MenuItemDelete_Click"></MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
-            <DataGrid.RowStyle>
-                <Style TargetType="DataGridRow">
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#FFC2E1DF" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.RowStyle>
+
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="id" Binding="{Binding [ID_Distribution]}" Header="Id" Width="200" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding [ID_Receipts]}" Header="Номер УПД" Width="120"/>
-                <DataGridTextColumn Binding="{Binding [Instance_status]}" Header ="Статус экземпляра" Width="130"/>
+                <DataGridTextColumn Binding="{Binding [Instance_status]}" Header ="Статус экземпляра" Width="150"/>
                 <DataGridTextColumn Binding="{Binding [Name_the_UPD]}" Header="Наименование УПД" Width="200"/>
-                <DataGridTextColumn Binding="{Binding [Date_receipt], StringFormat='dd/MM/yyyy'}" Header="Дата получения" Width="120"/>
-                <DataGridTextColumn Binding="{Binding [cn_E]}" Header="Разработчик" Width="200"/>
-                <DataGridTextColumn Binding="{Binding [Note]}" Header="Примечание" Width="150"/>
+                <DataGridTextColumn Binding="{Binding [Date_receipt], StringFormat='dd/MM/yyyy'}" Header="Дата получения" Width="130"/>
+                <DataGridTextColumn Binding="{Binding [cn_E]}" Header="Разработчик" Width="300"/>
+                <DataGridTextColumn Binding="{Binding [Note]}" Header="Примечание" Width="300"/>
             </DataGrid.Columns>
 
         </DataGrid>

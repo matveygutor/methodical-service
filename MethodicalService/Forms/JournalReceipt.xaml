@@ -27,31 +27,19 @@
                     <MenuItem Header="Изменить" Name="MenuItemEdit" Click="Edit_Click"></MenuItem>
                     <MenuItem Header="Удалить" Name="MenuItemDelete" Click="Delete_Click"></MenuItem>
                 </ContextMenu>
-                
-            </DataGrid.ContextMenu>
 
-            <DataGrid.RowStyle>
-                <Style TargetType="DataGridRow">
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#FFC2E1DF" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.RowStyle>
-            
+            </DataGrid.ContextMenu>
 
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="id" Binding="{Binding [ID_Receipts]}" Header="Id" Width="*" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding [Number_the_UPD]}" Header="Номер УПД" Width="120"/>
                 <DataGridTextColumn Binding="{Binding [Type_UPD]}" Header="Вид УПД" Width="130"/>
                 <DataGridTextColumn Binding="{Binding [Name_the_UPD]}" Header="Наименование УПД" Width="200"/>
-                <DataGridTextColumn Binding="{Binding [Number_instances]}" Header="Количество экземпляров" Width="200">
-                </DataGridTextColumn>
-                <DataGridTextColumn Binding="{Binding [Date_approval], StringFormat='dd/MM/yyyy'}" Header="Дата утверждения" Width="130"/>
-                <DataGridTextColumn Binding="{Binding [Meeting_number_YO]}" Header="Номер заседания" Width="140"/>
-                <DataGridTextColumn Binding="{Binding [Specialty_cipher]}" Header="Шифр специальности" Width="150"/>
-                <DataGridTextColumn Binding="{Binding [Duration_training]}" Header="Срок обучения" Width="120"/>
+                <DataGridTextColumn Binding="{Binding [Number_instances]}" Header="Количество экземпляров" Width="230"/>
+                <DataGridTextColumn Binding="{Binding [Date_approval], StringFormat='dd/MM/yyyy'}" Header="Дата утверждения" Width="170"/>
+                <DataGridTextColumn Binding="{Binding [Meeting_number_YO]}" Header="Номер заседания" Width="160"/>
+                <DataGridTextColumn Binding="{Binding [Specialty_cipher]}" Header="Шифр специальности" Width="190"/>
+                <DataGridTextColumn Binding="{Binding [Duration_training]}" Header="Срок обучения" Width="150"/>
                 <DataGridTextColumn Binding="{Binding [cn_E]}" Header="Разработчик" Width="300"/>
                 <DataGridTextColumn Binding="{Binding [Note]}" Header="Примечание" Width="200"/>
 
