@@ -42,19 +42,19 @@ namespace MethodicalService
         {
             List<SubItem> methodicalWork = new()
             {
-                new SubItem("Внеуч. работа", PackIconKind.Work),
-                new SubItem("Проф. развитие", PackIconKind.ProfessionalHexagon),
-                new SubItem("Пед. опыт", PackIconKind.ExpandAll),
-                new SubItem("Мат. база", PackIconKind.Material),
-                new SubItem("Мероприятия", PackIconKind.Event),
-                new SubItem("Отк. занятия", PackIconKind.School),
-                new SubItem("Посещ. занятий", PackIconKind.Schedule)
+                new SubItem("Внеуч. работа"),
+                new SubItem("Проф. развитие"),
+                new SubItem("Пед. опыт"),
+                new SubItem("Мат. база"),
+                new SubItem("Мероприятия"),
+                new SubItem("Отк. занятия"),
+                new SubItem("Посещ. занятий")
             };
             ItemMenu firstItem = new("Метод. работа", methodicalWork, PackIconKind.AccountStudent);
 
             List<SubItem> teachingLoad = new()
             {
-                new SubItem("Нагрузка", PackIconKind.Register)
+                new SubItem("Нагрузка")
             };
             ItemMenu secondItem = new("Пед. нагрузка", teachingLoad, PackIconKind.Teacher);
 

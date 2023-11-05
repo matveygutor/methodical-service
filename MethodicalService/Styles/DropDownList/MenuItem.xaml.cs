@@ -27,5 +27,10 @@ namespace MethodicalService.ViewModel
         {
             _context.SwitchScreen(((SubItem)((ListView)sender).SelectedItem).Screen);
         }
+
+        private void ListViewItemMenu_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
+        }
     }
 }
