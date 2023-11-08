@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MaterialDesignThemes.Wpf;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -22,6 +23,20 @@ namespace MethodicalService.Forms
         public ExtracurricularWorkForm()
         {
             InitializeComponent();
+
+            try
+            {
+                using var connection = new SqlConnection(Properties.Resources.connectionString);
+                connection.Open();
+                List<string> values = (List<string>)connection.Query<string>("SELECT Name FROM Specialty");
+                values.Add("Все");
+                specialityComboBox.ItemsSource = values;
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -230,6 +245,39 @@ namespace MethodicalService.Forms
                 int count = (int)db.ExecuteScalar($"SELECT COUNT(ID_Receipts) FROM Distribution_log_with_Employee_and_Number_UPD WHERE ID_Receipts = {number}");
                 MessageBox.Show($"Количество распределенных экземпляров УПД с номером {number}: {count}", "Результат обработки", MessageBoxButton.OK);
 
+            }
+        }
+
+        private void specialityComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((string)specialityComboBox.SelectedItem == "Все")
+            {
+                SelectDataFromServer("sp_GetReceipt");
+            }
+            else
+            {
+                string sqlExpression = "sp_GetDataOnSpeciality";
+                try
+                {
+                    using SqlConnection sqlConnection1 = new(Properties.Resources.connectionString);
+                    sqlConnection1.Open();
+                    SqlCommand command = new(sqlExpression, sqlConnection1)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    SqlParameter speciality_Parameter = new() { ParameterName = "@speciality", Value = specialityComboBox.SelectedItem.ToString() };
+                    command.Parameters.Add(speciality_Parameter);
+
+                    receiptTable = new DataTable();
+                    adapter = new SqlDataAdapter(command);
+                    adapter.Fill(receiptTable);
+                    receiptGrid.ItemsSource = receiptTable.DefaultView;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

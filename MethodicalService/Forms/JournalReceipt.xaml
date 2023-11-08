@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:MethodicalService.MethodicalWorkForms"
              mc:Ignorable="d" 
              d:DesignHeight="674" d:DesignWidth="1010">
-    <Grid Loaded="Grid_Loaded">
+    <Grid Loaded="Grid_Loaded" Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="29*"/>
             <ColumnDefinition Width="950*"/>
@@ -18,7 +18,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid  Margin="0,35,0,0" Grid.Column="1" Grid.Row="1" GridLinesVisibility="None" AutoGenerateColumns="False" IsReadOnly="True" Name="receiptGrid" Background="White" SelectionMode="Single" SelectionUnit="FullRow" HorizontalAlignment="Left" MouseDoubleClick="receiptGrid_MouseDoubleClick">
+        <DataGrid  Margin="0,65,0,0" Grid.Column="1" Grid.Row="1" GridLinesVisibility="None" AutoGenerateColumns="False" IsReadOnly="True" Name="receiptGrid" Background="White" SelectionMode="Single" SelectionUnit="FullRow" HorizontalAlignment="Center" MouseDoubleClick="receiptGrid_MouseDoubleClick" CanUserSortColumns="False" CanUserReorderColumns="False">
             <DataGrid.ContextMenu>
                 <ContextMenu x:Name="MenuAddEditDelete" Opened="MenuAddEditDelete_Opened">
                     <MenuItem Header="Распределить" Name="MenuItemRegistr" Click="Distribution_Click"></MenuItem>
@@ -42,13 +42,15 @@
                 <DataGridTextColumn Binding="{Binding [Duration_training]}" Header="Срок обучения" Width="150"/>
                 <DataGridTextColumn Binding="{Binding [cn_E]}" Header="Разработчик" Width="300"/>
                 <DataGridTextColumn Binding="{Binding [Note]}" Header="Примечание" Width="200"/>
-
             </DataGrid.Columns>
 
-            
+
         </DataGrid>
-        <TextBox x:Name="textSearch" TextWrapping="Wrap" Text="Поиск" Grid.Column="1" Margin="26,10,674,5" FontSize="14" GotFocus="TextSearch_GotFocus" TextChanged="TextSearch_TextChanged" LostFocus="TextSearch_LostFocus"/>
-        <CheckBox Grid.Column="1" Content="Показать не действующую УПД" HorizontalAlignment="Left" Margin="368,35,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <TextBox x:Name="textSearch" TextWrapping="Wrap" Text="Поиск" Grid.Column="1" Margin="0,9,700,536" FontSize="14" GotFocus="TextSearch_GotFocus" TextChanged="TextSearch_TextChanged" LostFocus="TextSearch_LostFocus" Grid.Row="1"/>
+        <CheckBox Grid.Column="1" Content="Показать не действующую УПД" HorizontalAlignment="Left" Margin="365,30,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.Row="1"/>
+        <ComboBox x:Name="specialityComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="611,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="specialityComboBox_SelectionChanged"/>
+        <Label Grid.Column="1" Content="Специальность" HorizontalAlignment="Left" Margin="611,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.278,-0.209" Grid.RowSpan="2"/>
+
 
 
     </Grid>
