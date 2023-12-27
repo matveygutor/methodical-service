@@ -15,7 +15,7 @@ namespace MethodicalService.Forms
     public partial class JournalReceipt : UserControl
     {
         SqlDataAdapter? adapter = null;
-        DataTable? receiptTable = null;
+        DataTable? table = null;
 
         public JournalReceipt()
         {
@@ -51,10 +51,10 @@ namespace MethodicalService.Forms
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                receiptTable = new DataTable();
+                table = new DataTable();
                 adapter = new SqlDataAdapter(command);
-                adapter.Fill(receiptTable);
-                receiptGrid.ItemsSource = receiptTable.DefaultView;
+                adapter.Fill(table);
+                receiptGrid.ItemsSource = table.DefaultView;
             }
             catch (Exception ex)
             {
@@ -70,10 +70,10 @@ namespace MethodicalService.Forms
         {
             AddReceipt addReceipt = new();
             addReceipt.buttonEdit.Visibility = Visibility.Hidden;
-            DataRow row = receiptTable.NewRow();
+            DataRow row = table.NewRow();
             addReceipt.Build(row);
             if (addReceipt.ShowDialog() == true)
-                receiptTable.Rows.Add(row);
+                table.Rows.Add(row);
             SelectDataFromServer("sp_GetReceipt");
         }
 
@@ -159,10 +159,10 @@ namespace MethodicalService.Forms
                     SqlParameter value_Parameter = new() { ParameterName = "@value", Value = textSearch.Text };
                     command.Parameters.Add(value_Parameter);
 
-                    receiptTable = new DataTable();
+                    table = new DataTable();
                     adapter = new SqlDataAdapter(command);
-                    adapter.Fill(receiptTable);
-                    receiptGrid.ItemsSource = receiptTable.DefaultView;
+                    adapter.Fill(table);
+                    receiptGrid.ItemsSource = table.DefaultView;
                 }
                 catch (Exception ex)
                 {
@@ -235,12 +235,10 @@ namespace MethodicalService.Forms
             if (receiptGrid.SelectedItem != null)
             {
                 var row = (receiptGrid.CurrentItem as DataRowView).Row;
-                string number = row["Number_the_UPD"].ToString();
-                
-                using IDbConnection db = new SqlConnection(Properties.Resources.connectionString);
-                int count = (int)db.ExecuteScalar($"SELECT COUNT(ID_Receipts) FROM Distribution_log_with_Employee_and_Number_UPD WHERE ID_Receipts = {number}");
-                MessageBox.Show($"Количество распределенных экземпляров УПД с номером {number}: {count}", "Результат обработки", MessageBoxButton.OK);
+                int id = (int)row["Number_the_UPD"];
 
+                Distribution distribution = new(id);
+                distribution.Show();
             }
         }
 
@@ -264,10 +262,10 @@ namespace MethodicalService.Forms
                     SqlParameter speciality_Parameter = new() { ParameterName = "@speciality", Value = specialityComboBox.SelectedItem.ToString() };
                     command.Parameters.Add(speciality_Parameter);
 
-                    receiptTable = new DataTable();
+                    table = new DataTable();
                     adapter = new SqlDataAdapter(command);
-                    adapter.Fill(receiptTable);
-                    receiptGrid.ItemsSource = receiptTable.DefaultView;
+                    adapter.Fill(table);
+                    receiptGrid.ItemsSource = table.DefaultView;
 
                 }
                 catch (Exception ex)

@@ -1,4 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
+using MethodicalService.Forms;
 using MethodicalService.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -42,14 +43,13 @@ namespace MethodicalService
         {
             List<SubItem> teachingLoad = new()
             {
-                new SubItem("Нагрузка")
+                new SubItem("Нагрузка", new SubjectTeacher()),
             };
             ItemMenu secondItem = new("Пед. нагрузка", teachingLoad, PackIconKind.Teacher);
 
             List<SubItem> updDevelopment = new()
             {
-                new SubItem("Поступление УПД", new Forms.JournalReceipt()),
-                new SubItem("Распределение УПД", new Forms.Distribution_log()),
+                new SubItem("Поступление УПД", new JournalReceipt()),
             };
             ItemMenu thirdItem = new("УПД", updDevelopment, PackIconKind.DocumentSign);
 

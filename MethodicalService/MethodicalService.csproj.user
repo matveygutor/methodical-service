@@ -16,10 +16,13 @@
     <Compile Update="Authentication.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Forms\Distribution_log.xaml.cs">
+    <Compile Update="Distribution.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\JournalReceipt.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\SubjectTeacher.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Styles\DropDownList\MenuItem.xaml.cs">
@@ -36,7 +39,10 @@
     <Page Update="Authentication.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Forms\Distribution_log.xaml">
+    <Page Update="Distribution.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\SubjectTeacher.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

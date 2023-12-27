@@ -65,7 +65,6 @@ D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\AddDistribution.g.cs
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\AddReceipt.g.cs
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Authentication.g.cs
-D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Forms\Distribution_log.g.cs
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Forms\JournalReceipt.g.cs
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\MainWindow.g.cs
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Styles\DropDownList\MenuItem.g.cs
@@ -76,7 +75,6 @@ D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\AddDistribution.baml
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\AddReceipt.baml
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Authentication.baml
-D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Forms\Distribution_log.baml
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Forms\JournalReceipt.baml
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\MainWindow.baml
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Styles\DropDownList\MenuItem.baml
@@ -97,3 +95,7 @@ D:\college\source\repos\kp\MethodicalService\MethodicalService\bin\Release\net7.
 D:\college\source\repos\kp\MethodicalService\MethodicalService\bin\Release\net7.0-windows\MethodicalService.pdb
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\MethodicalService.genruntimeconfig.cache
 D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\ref\MethodicalService.dll
+D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Distribution.g.cs
+D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Distribution.baml
+D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Forms\SubjectTeacher.g.cs
+D:\college\source\repos\kp\MethodicalService\MethodicalService\obj\Release\net7.0-windows\Forms\SubjectTeacher.baml
