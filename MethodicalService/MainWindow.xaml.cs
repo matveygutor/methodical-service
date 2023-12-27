@@ -40,18 +40,6 @@ namespace MethodicalService
 
         private void DrawMenu()
         {
-            List<SubItem> methodicalWork = new()
-            {
-                new SubItem("Внеуч. работа"),
-                new SubItem("Проф. развитие"),
-                new SubItem("Пед. опыт"),
-                new SubItem("Мат. база"),
-                new SubItem("Мероприятия"),
-                new SubItem("Отк. занятия"),
-                new SubItem("Посещ. занятий")
-            };
-            ItemMenu firstItem = new("Метод. работа", methodicalWork, PackIconKind.AccountStudent);
-
             List<SubItem> teachingLoad = new()
             {
                 new SubItem("Нагрузка")
@@ -60,15 +48,13 @@ namespace MethodicalService
 
             List<SubItem> updDevelopment = new()
             {
-                new SubItem("Поступление УПД", new Forms.ExtracurricularWorkForm()),
+                new SubItem("Поступление УПД", new Forms.JournalReceipt()),
                 new SubItem("Распределение УПД", new Forms.Distribution_log()),
-                new SubItem("Планы разр. УПД")
             };
             ItemMenu thirdItem = new("УПД", updDevelopment, PackIconKind.DocumentSign);
 
             Menu.Children.Add(new ViewModel.MenuItem(thirdItem, this));
             Menu.Children.Add(new ViewModel.MenuItem(secondItem, this));
-            Menu.Children.Add(new ViewModel.MenuItem(firstItem, this));
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MethodicalService"
         mc:Ignorable="d"
-        Title="Приложение заместителя директора по учебно-методической работе" Height="500" Width="939" WindowStartupLocation="CenterScreen">
+        Title="Методическая служба" Height="500" Width="939" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

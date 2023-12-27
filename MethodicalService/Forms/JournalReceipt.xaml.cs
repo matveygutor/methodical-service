@@ -12,15 +12,12 @@ using System.Windows.Media;
 
 namespace MethodicalService.Forms
 {
-    /// <summary>
-    /// Логика взаимодействия для ExtracurricularWork.xaml
-    /// </summary>
-    public partial class ExtracurricularWorkForm : UserControl
+    public partial class JournalReceipt : UserControl
     {
         SqlDataAdapter? adapter = null;
         DataTable? receiptTable = null;
 
-        public ExtracurricularWorkForm()
+        public JournalReceipt()
         {
             InitializeComponent();
 
@@ -129,8 +126,7 @@ namespace MethodicalService.Forms
 
         private void Filters_Click(object sender, RoutedEventArgs e)
         {
-            Filters filters = new();
-            filters.Show();
+            
         }
 
         private void TextSearch_GotFocus(object sender, RoutedEventArgs e)

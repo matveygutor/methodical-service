@@ -51,7 +51,6 @@ namespace MethodicalService
         {
             try
             {
-                Login = "iga";
                 MainWindow window = new MainWindow();
                 
                 window.Show();

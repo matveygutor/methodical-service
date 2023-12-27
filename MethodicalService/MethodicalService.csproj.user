@@ -16,9 +16,6 @@
     <Compile Update="Authentication.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Filters.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Forms\Distribution_log.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,9 +34,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Authentication.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Filters.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Distribution_log.xaml">

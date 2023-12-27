@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
 D:\college\source\repos\kp\MethodicalService\MethodicalService\App.xaml
-9945036488
+8135775872
 
-17-1207097267
+16-1002591128
 2032146827660
-AddDistribution.xaml;AddReceipt.xaml;Authentication.xaml;Filters.xaml;Forms\Distribution_log.xaml;Forms\JournalReceipt.xaml;MainWindow.xaml;Styles\DataGrid.xaml;Styles\DropDownList\MenuItem.xaml;
+AddDistribution.xaml;AddReceipt.xaml;Authentication.xaml;Forms\Distribution_log.xaml;Forms\JournalReceipt.xaml;MainWindow.xaml;Styles\DataGrid.xaml;Styles\DropDownList\MenuItem.xaml;
 
-True
+False
 
