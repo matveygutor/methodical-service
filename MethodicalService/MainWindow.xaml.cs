@@ -1,5 +1,6 @@
 ﻿using MaterialDesignThemes.Wpf;
 using MethodicalService.Forms;
+using MethodicalService.Service;
 using MethodicalService.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -23,8 +24,11 @@ namespace MethodicalService
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public User User { get; set; }
+
+        public MainWindow(User user)
         {
+            User = user;
             InitializeComponent();
             DrawMenu();
         }
@@ -41,20 +45,26 @@ namespace MethodicalService
 
         private void DrawMenu()
         {
-            List<SubItem> teachingLoad = new()
+            if (User.Role == "deputy")
             {
-                new SubItem("Нагрузка", new SubjectTeacher()),
-            };
-            ItemMenu secondItem = new("Пед. нагрузка", teachingLoad, PackIconKind.Teacher);
+                List<SubItem> updDevelopment = new()
+                {
+                    new SubItem("Поступление УПД", new JournalReceipt()),
+                    new SubItem("Пед. нагрузка", new SubjectTeacher()),
+                };
+                ItemMenu thirdItem = new("УПД", updDevelopment, PackIconKind.Teacher);
 
-            List<SubItem> updDevelopment = new()
+                Menu.Children.Add(new ViewModel.MenuItem(thirdItem, this));
+            }
+            if (User.Role == "methodist")
             {
-                new SubItem("Поступление УПД", new JournalReceipt()),
-            };
-            ItemMenu thirdItem = new("УПД", updDevelopment, PackIconKind.DocumentSign);
-
-            Menu.Children.Add(new ViewModel.MenuItem(thirdItem, this));
-            Menu.Children.Add(new ViewModel.MenuItem(secondItem, this));
+                List<SubItem> teachingLoad = new()
+                {
+                    new SubItem("Пед. нагрузка", new SubjectTeacher()),
+                };
+                ItemMenu secondItem = new("Пед. нагрузка", teachingLoad, PackIconKind.Teacher);
+                Menu.Children.Add(new ViewModel.MenuItem(secondItem, this));
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using MethodicalService.Service;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -70,7 +71,12 @@ namespace MethodicalService
                     string name = connection.Query<string>($"SELECT name + ' ' + fathername FROM user_identity WHERE login = '{Login}'").SingleOrDefault();
                     MessageBox.Show($"Добро пожаловать, {name}", "Вход в систему", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    MainWindow window = new MainWindow();
+                    string role = connection.Query<string>($"SELECT role_name FROM user_role WHERE id_role = (SELECT user_role FROM user_identity WHERE login = '{Login}')").SingleOrDefault();
+
+
+                    User user = new(name, role);
+
+                    MainWindow window = new(user);
 
                     window.Show();
                     this.Close();

@@ -41,7 +41,7 @@
                 <DataGridTextColumn Binding="{Binding [FullName]}" Header="Преподаватель" Width="250"/>
                 <DataGridTextColumn Binding="{Binding [Subject]}" Header="Предмет" Width="150"/>
                 <DataGridTextColumn Binding="{Binding [OKR_1_quantity]}" Header="ОКР в первом семестре" Width="200"/>
-                <DataGridTextColumn Binding="{Binding [OKR_2_semestr]}" Header="ОКР в первом семестре" Width="200"/>
+                <DataGridTextColumn Binding="{Binding [OKR_2_semestr]}" Header="ОКР во втором семестре" Width="200"/>
             </DataGrid.Columns>
             
         </DataGrid>
